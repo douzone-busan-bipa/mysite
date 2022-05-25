@@ -7,8 +7,15 @@ public class GuestbookActionFactory extends ActionFactory {
 
 	@Override
 	public Action getAction(String actionName) {
-		// TODO Auto-generated method stub
-		return null;
+		Action action = null;
+		
+		if("deleteform".equals(actionName)) {
+			
+		} else {
+			action = new IndexAction();
+		}
+		
+		return action;
 	}
 
 }
