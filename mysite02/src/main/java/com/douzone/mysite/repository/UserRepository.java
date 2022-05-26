@@ -151,7 +151,7 @@ public class UserRepository {
 		return result;
 	}
 
-public boolean update(UserVo vo) {
+	public boolean update(UserVo vo) {
 		boolean result = false;
 
 		Connection conn = null;
