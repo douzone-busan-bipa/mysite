@@ -1,4 +1,4 @@
-package com.poscoict.mysite.mvc.guestbook;
+package com.douzone.mysite.web.mvc.guestbook;
 
 import java.io.IOException;
 
@@ -6,10 +6,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.poscoict.mysite.dao.GuestbookDao;
-import com.poscoict.mysite.vo.GuestbookVo;
-import com.poscoict.web.mvc.Action;
-import com.poscoict.web.util.MvcUtils;
+import com.douzone.mysite.repository.GuestbookRepository;
+import com.douzone.mysite.vo.GuestbookVo;
+import com.douzone.web.mvc.Action;
+import com.douzone.web.util.WebUtil;
 
 public class AddAction implements Action {
 
@@ -24,8 +24,8 @@ public class AddAction implements Action {
 		vo.setPassword(password);
 		vo.setMessage(message);
 		
-		new GuestbookDao().insert(vo);
-		MvcUtils.redirect(request.getContextPath() + "/guestbook", request, response);
+		new GuestbookRepository().insert(vo);
+		WebUtil.redirect(request, response, request.getContextPath() + "/guestbook");
 	}
 
 }

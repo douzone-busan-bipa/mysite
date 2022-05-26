@@ -1,7 +1,7 @@
-package com.poscoict.mysite.mvc.guestbook;
+package com.douzone.mysite.web.mvc.guestbook;
 
-import com.poscoict.web.mvc.Action;
-import com.poscoict.web.mvc.ActionFactory;
+import com.douzone.web.mvc.Action;
+import com.douzone.web.mvc.ActionFactory;
 
 public class GuestbookActionFactory extends ActionFactory {
 
