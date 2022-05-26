@@ -12,7 +12,8 @@ import com.douzone.mysite.vo.UserVo;
 import com.douzone.web.mvc.Action;
 import com.douzone.web.util.WebUtil;
 
-public class UpdateFormAction implements Action {
+public class UpdateAction implements Action {
+
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 접근제어(Access Control) 
@@ -29,8 +30,17 @@ public class UpdateFormAction implements Action {
 		}
 		//////////////////////////////////////////////////////////////////
 		
-		UserVo userVo = new UserRepository().findByNo(authUser.getNo());
-		request.setAttribute("userVo", userVo);
-		WebUtil.forward(request, response, "user/updateform");
+		String name = request.getParameter("name");
+		String password = request.getParameter("password");
+		String gender = request.getParameter("gender");
+		
+		UserVo vo = new UserVo();
+		vo.setNo(authUser.getNo());
+		vo.setName(name);
+		vo.setPassword(password);
+		vo.setGender(gender);
+		
+		new UserRepository().update(vo);
 	}
+
 }
