@@ -2,6 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<% pageContext.setAttribute("newLine", "\n"); %>
+
 
 <%@page import="java.util.List"%>
 <%@page import="com.douzone.mysite.repository.GuestbookRepository"%>
@@ -51,8 +53,8 @@
 									<td><a href="<%=request.getContextPath() %>/guestbook?a=deleteform&no=<%=vo.getNo() %>">삭제</a></td>
 								</tr>
 								<tr>
-									<td colspan=4>
-										<%=vo.getMessage().replaceAll("\n", "<br/>") %>	
+									<td colspan=4>										
+										${fn:replace(vo.message, newLine, "<br/>") }	
 									</td>
 								</tr>
 							</table>
