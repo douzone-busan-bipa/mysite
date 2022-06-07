@@ -9,9 +9,17 @@ import com.douzone.mysite.vo.UserVo;
 @Service
 public class UserService {
 	@Autowired
-	private UserRepository userRespository;
+	private UserRepository userRepository;
 
 	public void join(UserVo vo) {
-		userRespository.insert(vo);
+		userRepository.insert(vo);
+	}
+
+	public UserVo getUser(UserVo vo) {
+		return userRepository.findByEmailAndPassword(vo);
+	}
+
+	public UserVo getUser(Long no) {
+		return userRepository.findByNo(no);
 	}
 }
