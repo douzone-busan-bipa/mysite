@@ -1,6 +1,5 @@
 package com.douzone.mysite.service;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +18,7 @@ public class GuestbookService {
 	}
 	
 	public Boolean deleteMessage(Long no, String password) {
-		GuestbookVo vo = new GuestbookVo();
-		vo.setNo(no);
-		vo.setPassword(password);
-		
-		return guestbookRepository.delete(vo);
+		return guestbookRepository.delete(no, password);
 	}
 	
 	public Boolean addMessage(GuestbookVo vo) {
