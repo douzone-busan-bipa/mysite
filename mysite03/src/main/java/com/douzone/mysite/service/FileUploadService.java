@@ -13,8 +13,8 @@ import com.douzone.mysite.exception.FileUploadException;
 
 @Service
 public class FileUploadService {
-	private static String SAVE_PATH = "/upload-mysite";
-	private static String URL_BASE = "/upload/images";	
+	private static String SAVE_PATH = "/mysite-uploads";
+	private static String URL_BASE = "/assets/gallery";	
 	
 	public String restoreImage(MultipartFile file) throws FileUploadException {
 		try {
