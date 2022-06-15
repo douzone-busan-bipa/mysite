@@ -32,7 +32,7 @@ public class AdminController {
 
 	@RequestMapping(value="/main/update", method=RequestMethod.POST)
 	public String updateMain(SiteVo vo, @RequestParam("file") MultipartFile file) {
-		String profile = fileUploadService.restore(file);
+		String profile = fileUploadService.restoreImage(file);
 		vo.setProfile(profile);
 		
 		siteService.updateSite(vo);
