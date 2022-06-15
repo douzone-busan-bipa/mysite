@@ -3,11 +3,14 @@
 <mapper namespace="site">
 	<select id="find" resultType="sitevo">
 		<![CDATA[
-		  select title,
-		  		 welcome_message as welcomeMessage,
-		  		 profile_url as profileURL,
-		  		 description
-		    from site
+		   select no, title, welcome, profile, description from site
 		]]>
 	</select>
+
+	<select id="update" resultType="sitevo">
+		<![CDATA[
+			update site set title=#{title }, welcome=#{welcome }, profile=#{profile }, description=#{description }
+		]]>
+	</select>
+
 </mapper>
