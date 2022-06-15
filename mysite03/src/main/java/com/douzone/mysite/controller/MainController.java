@@ -1,42 +1,40 @@
-package com.douzone.mysite.controller;
+package com.poscoict.mysite.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.douzone.mysite.service.SiteService;
-import com.douzone.mysite.vo.SiteVo;
-import com.douzone.mysite.vo.UserVo;
-
 @Controller
 public class MainController {
-	@Autowired
-	private SiteService siteService;
-	
-	@RequestMapping("")
-	public String index(Model model) {
-		SiteVo vo = siteService.getSite();
-		model.addAttribute("vo", vo);
+	@RequestMapping({"", "/main"})
+	public String index() {
 		return "main/index";
 	}
 	
 	@ResponseBody
-	@RequestMapping("/msg1")
-	public String message1() {
-		return "안녕~~";
+	@RequestMapping("/msg01")
+	public String message01() {
+		return "안녕";
 	}
 	
+	@RequestMapping("/msg02")
+	public void message02(HttpServletResponse resp) throws Exception {
+		resp.setContentType("application/json; charset=UTF-8");
+		resp.getWriter().print("{\"message\": \"Hello World\"}");
+	}	
+
 	@ResponseBody
-	@RequestMapping("/msg2")
-	public Object message2() {
-		UserVo vo = new UserVo();
-		vo.setNo(1L);
-		vo.setEmail("kickscar@gmail.com");
-		vo.setName("안대혁");
+	@RequestMapping("/msg03")
+	public Object message03() {
+		Map<String, Object> map = new HashMap<>();
+		map.put("message", "Hello World");
 		
-		return vo;
-	}
+		return map;
+	}	
 	
 }
