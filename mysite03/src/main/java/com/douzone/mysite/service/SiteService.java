@@ -1,10 +1,10 @@
-package com.poscoict.mysite.service;
+package com.douzone.mysite.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.poscoict.mysite.repository.SiteRepository;
-import com.poscoict.mysite.vo.SiteVo;
+import com.douzone.mysite.repository.SiteRepository;
+import com.douzone.mysite.vo.SiteVo;
 
 @Service
 public class SiteService {

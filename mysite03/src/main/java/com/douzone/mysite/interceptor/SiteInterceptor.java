@@ -1,4 +1,4 @@
-package com.dozuone.mysite.interceptor;
+package com.douzone.mysite.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.dozuone.mysite.service.SiteService;
-import com.dozuone.mysite.vo.SiteVo;
+import com.douzone.mysite.service.SiteService;
+import com.douzone.mysite.vo.SiteVo;
 
 public class SiteInterceptor extends HandlerInterceptorAdapter {
 	

@@ -1,4 +1,4 @@
-package com.poscoict.mysite.controller;
+package com.douzone.mysite.controller;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.poscoict.mysite.security.Auth;
-import com.poscoict.mysite.service.FileUploadService;
-import com.poscoict.mysite.service.SiteService;
-import com.poscoict.mysite.vo.SiteVo;
+import com.douzone.mysite.security.Auth;
+import com.douzone.mysite.service.FileUploadService;
+import com.douzone.mysite.service.SiteService;
+import com.douzone.mysite.vo.SiteVo;
 
 @Auth(role="ADMIN")
 @Controller
@@ -38,7 +38,7 @@ public class AdminController {
 
 	@RequestMapping("/main/update")
 	public String main(SiteVo site, @RequestParam("file") MultipartFile file) {
-		String profile = fileUploadService.restore(file);
+		String profile = fileUploadService.restoreImage(file);
 		
 		if(profile != null) {
 			site.setProfile(profile);

@@ -18,7 +18,6 @@
 
 	<!-- validator, conversionService, messageConverter를 자동으로 등록 -->
 	<mvc:annotation-driven>
-	
 		<!-- Argument Resolver -->
 		<mvc:argument-resolvers>
 			<bean class="com.douzone.mysite.security.AuthUserHandlerMethodArgumentResolver" />
@@ -29,7 +28,7 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
-			<bean class="com.poscoict.mysite.interceptor.SiteInterceptor"/>
+			<bean class="com.douzone.mysite.interceptor.SiteInterceptor"/>
 		</mvc:interceptor>		
 		<mvc:interceptor>
 			<mvc:mapping path="/user/auth"/>
