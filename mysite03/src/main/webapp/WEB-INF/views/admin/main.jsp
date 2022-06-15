@@ -20,11 +20,11 @@
 						<input id="title" name="title" type="text" value="${site.title }">
 						
 						<label class="block-label" for="welcomeMessage">환영 메세지</label>
-						<input id="welcomeMessage" name="welcome" type="text" value="${site.welcome }">
+						<input id="welcomeMessage" name="welcomeMessage" type="text" value="${site.welcomeMessage }">
 
 						<label class="block-label">프로필 이미지</label>
-						<img id="profile" src="${pageContext.request.contextPath }${site.profile }">
-						<input type="hidden" name="profile" value="${site.profile }" />
+						<img id="profile" src="${pageContext.request.contextPath }${site.profileUrl }">
+						<input type="hidden" name="profileUrl" value="${site.profileUrl }" />
 						<input type="file" name="file">
 
 						<label class="block-label">사이트 설명</label>
@@ -32,9 +32,6 @@
 						
 						<input type="submit" value="변경" />
 					</form>
-									
-				
-
 				</div>
 			</div>
 			<c:import url="/WEB-INF/views/admin/include/navigation.jsp">
