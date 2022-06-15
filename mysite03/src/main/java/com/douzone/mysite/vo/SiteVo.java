@@ -1,27 +1,27 @@
 package com.douzone.mysite.vo;
 
 public class SiteVo {
-	private Long no;
-	private String welcomeMessage;
-	private String profileURL;
+	private String title;
+	private String welcome;
+	private String profile;
 	private String description;
-	public Long getNo() {
-		return no;
+	public String getTitle() {
+		return title;
 	}
-	public void setNo(Long no) {
-		this.no = no;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getWelcomeMessage() {
-		return welcomeMessage;
+	public String getWelcome() {
+		return welcome;
 	}
-	public void setWelcomeMessage(String welcomeMessage) {
-		this.welcomeMessage = welcomeMessage;
+	public void setWelcome(String welcome) {
+		this.welcome = welcome;
 	}
-	public String getProfileURL() {
-		return profileURL;
+	public String getProfile() {
+		return profile;
 	}
-	public void setProfileURL(String profileURL) {
-		this.profileURL = profileURL;
+	public void setProfile(String profile) {
+		this.profile = profile;
 	}
 	public String getDescription() {
 		return description;
@@ -31,7 +31,7 @@ public class SiteVo {
 	}
 	@Override
 	public String toString() {
-		return "SiteVo [no=" + no + ", welcomeMessage=" + welcomeMessage + ", profileURL=" + profileURL
-				+ ", description=" + description + "]";
+		return "SiteVo [title=" + title + ", welcome=" + welcome + ", profile=" + profile + ", description="
+				+ description + "]";
 	}
 }
