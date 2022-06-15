@@ -17,17 +17,17 @@
 				<div id="site-form">
 					<form method="post" action="${pageContext.request.contextPath }/admin/main/update" enctype="multipart/form-data">
 						<label class="block-label" for="title">사이트 타이틀</label>
-						<input id="title" name="title" type="text" value="${site.title }">
+						<input id="title" name="title" type="text" value="${vo.title }">
 						
 						<label class="block-label" for="welcomeMessage">환영 메세지</label>
-						<input id="welcomeMessage" name="welcomeMessage" type="text" value="${site.welcomeMessage }">
+						<input id="welcomeMessage" name="welcome" type="text" value="${vo.welcome }">
 
 						<label class="block-label">프로필 이미지</label>
-						<img id="profile" src="${pageContext.request.contextPath }/${site.profileURL }">
+						<img id="profile" src="${pageContext.request.contextPath }/${vo.profile }" style="width:120px">
 						<input type="file" name="file">
 
 						<label class="block-label">사이트 설명</label>
-						<textarea name="description">${site.description }</textarea>
+						<textarea name="description">${vo.description }</textarea>
 						
 						<input type="submit" value="변경" />
 					</form>
