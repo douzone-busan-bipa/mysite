@@ -14,6 +14,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/jquery/jquery-1.9.0.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/lightbox.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- Begin:ADMIN -->
 <script type="text/javascript">
 	$(function(){
 		// 업로드 다이알로그
@@ -42,6 +43,7 @@
 		});
 	});	
 </script>
+<!-- End:ADMIN -->
 </head>
 <body>
 	<div id="container">
@@ -50,7 +52,9 @@
 			<div id="gallery">
 				<div>
 					<h1 style="background: url('${pageContext.request.contextPath }/assets/images/gallery.png') no-repeat 0 0 / 35px">갤러리</h1>
+					<!-- Begin:ADMIN -->
 					<a href="" id="upload-image">이미지 올리기</a>
+					<!-- End:ADMIN -->
 				</div>
 				<ul>
 					<c:forEach items="${list }" var="vo">
@@ -59,14 +63,19 @@
 								data-lightbox="gallery"
 								class="image"
 								style="background-image:url('${pageContext.request.contextPath }${vo.url }">&nbsp;</a>
+							
+							<!-- Begin:ADMIN -->
 							<a	style="background: url('${pageContext.request.contextPath }/assets/images/delete-image.png') no-repeat 0 0 / 18px"
 								href="${pageContext.request.contextPath }/gallery/delete/${vo.no }"
 								class="del-button"
 								title="삭제">삭제</a>
+							<!-- End:ADMIN -->
 						</li>						
 					</c:forEach>
 				</ul>	
 			</div>
+			
+			<!-- Begin:ADMIN -->
 			<div id="dialog-upload-form" title="이미지 업로드" style="display:none">
   				<p class="validateTips normal">이미지와 간단한 코멘트를 입력해 주세요.</p>
   				<form action="${pageContext.request.contextPath }/gallery/upload" 
@@ -79,6 +88,7 @@
 					<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
   				</form>
 			</div>
+			<!-- End:ADMIN -->
 		</div>
 		<c:import url="/WEB-INF/views/includes/navigation.jsp" />
 		<c:import url="/WEB-INF/views/includes/footer.jsp" />
