@@ -46,7 +46,7 @@ var fetchList = function(){
 	}
 
 	$.ajax({
-		url: '${pageContext.request.contextPath }/guestbook/api/list/' + startNo,
+		url: '${pageContext.request.contextPath }/api/guestbook?sno=' + startNo,
 		async: true,
 		type: 'get',
 		dataType: 'json',
@@ -90,7 +90,7 @@ $(function(){
 				var password = $("#password-delete").val();
 
 				$.ajax({
-					url: '${pageContext.request.contextPath }/guestbook/api/delete/' + no,
+					url: '${pageContext.request.contextPath }/api/guestbook/' + no,
 					async: true,
 					type: 'delete',
 					dataType: 'json',
@@ -156,7 +156,7 @@ $(function(){
 		}
 
 		$.ajax({
-			url: '${pageContext.request.contextPath }/guestbook/api/add',
+			url: '${pageContext.request.contextPath }/api/guestbook',
 			async: true,
 			type: 'post',
 			dataType: 'json',
@@ -217,40 +217,7 @@ $(function(){
 					<textarea id="tx-content" placeholder="내용을 입력해 주세요."></textarea>
 					<input type="submit" value="보내기" />
 				</form>
-				<ul id="list-guestbook">
-
-					<li data-no=''>
-						<strong>지나가다가</strong>
-						<p>
-							별루입니다.<br>
-							비번:1234 -,.-
-						</p>
-						<strong></strong>
-						<a href='' data-no=''>삭제</a> 
-					</li>
-					
-					<li data-no=''>
-						<strong>둘리</strong>
-						<p>
-							안녕하세요<br>
-							홈페이지가 개 굿 입니다.
-						</p>
-						<strong></strong>
-						<a href='' data-no=''>삭제</a> 
-					</li>
-
-					<li data-no=''>
-						<strong>주인</strong>
-						<p>
-							아작스 방명록 입니다.<br>
-							테스트~
-						</p>
-						<strong></strong>
-						<a href='' data-no=''>삭제</a> 
-					</li>
-					
-									
-				</ul>
+				<ul id="list-guestbook"></ul>
 			</div>
 			<div id="dialog-delete-form" title="메세지 삭제" style="display:none">
   				<p class="validateTips normal">작성시 입력했던 비밀번호를 입력하세요.</p>
