@@ -25,6 +25,9 @@ var messageBox = function(title, message, callback){
 					"확인": function() {
 						$(this).dialog( "close" );
 					}
+		
+		
+		
 				},
 				close: callback
 		});
